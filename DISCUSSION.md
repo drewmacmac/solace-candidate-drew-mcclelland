@@ -8,6 +8,9 @@ We shouldn't fetch all advocates in a single API call. We should paginate the re
 This would involve moving the search string matching to the ORM/DB query layer, 
 and extending the NextJS route to take a query param for the search. 
 
+**Also need to make sure we encode the params for API safety (because it's user input) 
+and make sure we use the ORM in a way where it correctly prevents SQL injection** 
+
 This would make it even more important to add debouncing to the search term so we're not thrashing the DB
 
 ## Misc
